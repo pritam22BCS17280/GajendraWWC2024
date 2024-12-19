@@ -1,0 +1,62 @@
+Procedure for the Inventory Management System Code
+This procedure explains how the code functions step by step and how each part works together:
+
+1. Class Definition
+InventoryItem Class:
+Represents an individual inventory item with properties like itemID, name, category, quantity, and reorderLevel.
+Constructor initializes these properties.
+display method prints the item's details.
+2. Inventory Management System Class
+InventoryManagementSystem Class:
+Manages the inventory using a std::vector of InventoryItem objects.
+Includes methods for various operations:
+addItem: Adds a new item to the inventory.
+updateStock: Updates the stock quantity of an existing item.
+viewInventory: Displays the current inventory and alerts if stock is below the reorder level.
+searchItem: Searches for an item by name and displays its details if found.
+exportInventory: Exports inventory data to a file named inventory_report.txt.
+3. Adding an Item
+Prompts the user for:
+Item ID, Item Name, Category, Quantity, and Reorder Level.
+Creates a new InventoryItem object using the provided data.
+Adds the object to the inventory vector using emplace_back.
+4. Updating Stock
+Prompts the user to enter the Item ID of the item to update.
+Iterates through the inventory vector to find the matching item.
+If found, updates the quantity with the user-provided value.
+If not found, notifies the user.
+5. Viewing Inventory
+Iterates through all items in the inventory vector and calls their display method.
+Checks if any item’s quantity is below the reorderLevel and displays an alert for such items.
+6. Searching for an Item
+Prompts the user to enter an Item Name to search.
+Traverses the inventory vector to find a matching item by name.
+If found, displays the item’s details using the display method.
+If not found, notifies the user.
+7. Exporting Inventory
+Opens a file named inventory_report.txt in write mode.
+Iterates through the inventory vector and writes each item’s details (comma-separated) into the file.
+Closes the file and notifies the user about successful export.
+If the file cannot be opened, displays an error message.
+8. Menu Functionality
+menu Method:
+Displays a menu with options:
+1: Add Item
+2: Update Stock
+3: View Inventory
+4: Search Item
+5: Export Inventory
+6: Exit
+Takes user input and calls the respective method based on the choice.
+Runs in a loop until the user selects option 6 (Exit).
+9. Main Function
+Creates an instance of InventoryManagementSystem.
+Calls the menu method to start the application.
+Execution Flow
+Run the Program:
+The menu is displayed.
+User Interacts with the Menu:
+Based on the user's choice, the program performs the corresponding operation:
+Add, Update, View, Search, Export, or Exit.
+Repeat Until Exit:
+The loop continues until the user selects option 6 (Exit).
